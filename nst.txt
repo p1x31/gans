@@ -1,0 +1,13 @@
+Freeze all the weight in the VGG19
+Original image style image generated image(noise)
+input generated image to become original image with the style of style image
+Remove fc layers
+Get output from conv layers after pooling layers
+Loss = alha * content_loss(C,G) + beta * style_loss(S,G)
+C - content image\
+G - generated image
+S - style image
+Content loss = MSE(original -generated) take the norm of every layer  = activations
+Style loss = gram matrices for the generated and style image
+multiply output form conv layer with its transpose
+style_loss = sum(Gram_generated - gram_style)^2
